@@ -20,4 +20,4 @@
 
 - Decorators
 
-- Oetos práticos para aplicar o que aprendemos
+- Projetos práticos para aplicar o que aprendemos
