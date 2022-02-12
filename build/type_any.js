@@ -1,0 +1,10 @@
+"use strict";
+let precoProdutos;
+precoProdutos = true;
+precoProdutos = "R$";
+precoProdutos = 100;
+let nota1;
+let nota2;
+nota1 = 10;
+nota2 = 20;
+nota1 = "teste";
