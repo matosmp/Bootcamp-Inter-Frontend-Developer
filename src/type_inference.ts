@@ -6,7 +6,7 @@
  * Ex: declarar let curso="TypeScript"  --> Significa que irá assumir o tipo string para a variável curso
  *
  *  Observação: Se atribuir um número a variável curso irá causar um erro na aplicação porque o typeScript tipou 
- *  essa variável como string 
+ *  essa variável como string.
  * 
  */
 
