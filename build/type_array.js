@@ -1,0 +1,14 @@
+"use strict";
+let numeros;
+numeros = [1, 5, 20, 65];
+console.log(numeros);
+numeros.push(55);
+console.log(`Após adicionar o número 55 = ${numeros}`);
+let filmes;
+filmes = ['Homem de Ferro', 'Hulk'];
+console.log(filmes);
+filmes.push('Vingadores');
+console.log(filmes);
+let filmesNumeros;
+filmesNumeros = ['Homem de Ferro', 100, 'Hulk', 300];
+console.log(filmesNumeros);
