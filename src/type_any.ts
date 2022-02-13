@@ -2,7 +2,7 @@
  * 
  * Aula 14 - type ANY
  * 
- * O type ANY aceita qualquer tipo, ou seja, não faz é interessante utilizar com typeScript, EXCETO em situações muito
+ * O type ANY aceita qualquer tipo, ou seja, não é interessante utilizar com typeScript, EXCETO em situações muito
  * específicas. 
  * 
  */
