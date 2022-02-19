@@ -34,7 +34,7 @@ repo1.setDados("20");
 console.log(repo1.getDados());
 
 //Aplicando Generics
-console.log('===========================================')
+console.log('========================================')
 console.log(' Executando o código abaixo usando Generics')
 
 /*Declarando o generics após o nome da função, usando o sinal de maior e menor <> e informando o tipo entre o sinal. 
@@ -74,9 +74,28 @@ function repositorio2<T>(){/*Também é possível determinar tipos,EX: function 
 const repo2 = repositorio2<string | number>();
 
 repo2.setDados(15);
-
 console.log(repo2.getDados());
 
+//Também é possível usar qualquer nome para identificar o generic mas não é recomendado
+function repositorio3<qualquerTipo>(){
+let dados: qualquerTipo;
+
+function getDados() {
+return dados;
+};
+
+function setDados(novoDado:qualquerTipo) {
+dados = novoDado;
+};
+
+return { getDados, setDados }
+
+}
+
+const repo3 = repositorio3<string | number>();
+
+repo3.setDados(30);
+console.log(repo3.getDados());
 
 
 

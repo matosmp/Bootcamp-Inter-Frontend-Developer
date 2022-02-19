@@ -15,7 +15,7 @@ const repo1 = repositorio();
 repo1.setDados(15);
 repo1.setDados("20");
 console.log(repo1.getDados());
-console.log('===========================================');
+console.log('========================================');
 console.log(' Executando o código abaixo usando Generics');
 function repositorio2() {
     let dados;
@@ -32,3 +32,18 @@ function repositorio2() {
 const repo2 = repositorio2();
 repo2.setDados(15);
 console.log(repo2.getDados());
+function repositorio3() {
+    let dados;
+    function getDados() {
+        return dados;
+    }
+    ;
+    function setDados(novoDado) {
+        dados = novoDado;
+    }
+    ;
+    return { getDados, setDados };
+}
+const repo3 = repositorio3();
+repo3.setDados(30);
+console.log(repo3.getDados());

@@ -12,7 +12,7 @@ const arroz: NovoProduto = {
 console.log(arroz)
 
 // Usando Types com Generics na interface
-console.log('====================================')
+console.log('===============================')
 console.log('Usando Generics com a interface')
 
 interface NovoProduto2<V extends string | number> {
