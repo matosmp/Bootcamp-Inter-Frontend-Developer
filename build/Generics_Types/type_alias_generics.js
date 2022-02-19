@@ -4,7 +4,7 @@ const farinha = {
     preco: 5.90
 };
 console.log(farinha);
-console.log('====================================');
+console.log('================================');
 console.log('Usando Generics com a interface');
 const suco = {
     nome: "Suco de Laranja",

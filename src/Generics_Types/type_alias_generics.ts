@@ -13,7 +13,7 @@ const farinha: NovoProduto3 = {
 console.log(farinha)
 
 // Usando Types com Generics no type
-console.log('====================================')
+console.log('================================')
 console.log('Usando Generics com a interface')
 
 type NovoProduto10<V extends string | number>={
