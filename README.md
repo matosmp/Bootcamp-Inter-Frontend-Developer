@@ -14,10 +14,10 @@
 
 - Classes em TypeScript
 
-- Namespaces e Módulos
+- Módulos
 
 - Generics
 
 - Decorators
 
-- Projetos práticos para aplicar o que aprendemos
+- Projeto prático para aplicar o que aprendemos
