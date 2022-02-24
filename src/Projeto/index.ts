@@ -3,17 +3,23 @@ let listElement = document.querySelector("#app ul") as HTMLUListElement; // Tipa
 let inputElement = document.querySelector("#app input") as HTMLInputElement;
 let buttonElement = document.querySelector("#app button") as HTMLElement;
 
-let listaSalva : string | null = localStorage.getItem("@listagem_tarefa");
+let listaSalva: (string | null) = localStorage.getItem("@listagem_tarefas");// Buscar lista salva no localStorage *Vem como string
 
 //Lista de tarefas
-let tarefas: string[] = [];
+let tarefas: string[] = listaSalva !== null && JSON.parse(listaSalva) || [];
+
+/** Converter(JSON.parse()) a variável listaSalva para um array novamente porque ela vem como string.
+ * 
+ * 
+ */                                                                            
+
 
 function listarTarefas() {
     listElement.innerHTML = ""; //Limpando a lista
 
     tarefas.map(item => {
         let todoElement = document.createElement("li");
-        let tarefaText = document.createElement(item);
+        let tarefaText = document.createTextNode(item);
 
         todoElement.appendChild(tarefaText); // Colocando dentro de uma tag li o item
         listElement.appendChild(todoElement); //Colocando os itens dentro da nossa lista
@@ -37,7 +43,7 @@ function adicionarTarefa(): boolean | void {
         let tarefaDigitada: string = inputElement.value;
         tarefas.push(tarefaDigitada);
 
-        inputElement.value ="";
+        inputElement.value = "";
 
         listarTarefas();
         salvarDados();
