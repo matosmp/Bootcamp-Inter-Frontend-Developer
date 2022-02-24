@@ -2,13 +2,13 @@
 let listElement = document.querySelector("#app ul");
 let inputElement = document.querySelector("#app input");
 let buttonElement = document.querySelector("#app button");
-let listaSalva = localStorage.getItem("@listagem_tarefa");
-let tarefas = [];
+let listaSalva = localStorage.getItem("@listagem_tarefas");
+let tarefas = listaSalva !== null && JSON.parse(listaSalva) || [];
 function listarTarefas() {
     listElement.innerHTML = "";
     tarefas.map(item => {
         let todoElement = document.createElement("li");
-        let tarefaText = document.createElement(item);
+        let tarefaText = document.createTextNode(item);
         todoElement.appendChild(tarefaText);
         listElement.appendChild(todoElement);
     });
