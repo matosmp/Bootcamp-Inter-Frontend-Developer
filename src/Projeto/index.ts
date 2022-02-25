@@ -9,10 +9,7 @@ let listaSalva: (string | null) = localStorage.getItem("@listagem_tarefas");// B
 let tarefas: string[] = listaSalva !== null && JSON.parse(listaSalva) || [];
 
 /** Converter(JSON.parse()) a variável listaSalva para um array novamente porque ela vem como string.
- * 
- * 
- */                                                                            
-
+ **/
 
 function listarTarefas() {
     listElement.innerHTML = ""; //Limpando a lista
@@ -21,19 +18,26 @@ function listarTarefas() {
         let todoElement = document.createElement("li");
         let tarefaText = document.createTextNode(item);
 
+        let linkElement = document.createElement('a');
+        linkElement.setAttribute("href", "#");
+
+        let posicao = tarefas.indexOf(item, 0); // Obtendo a posição de cada item
+
+
+        linkElement.setAttribute("onclick", `deletarTarefa(${posicao})`);
+        linkElement.setAttribute("style", "margin-right:10px");
+
+        let linkText = document.createTextNode("Excluir");
+
+        linkElement.appendChild(linkText);
+        todoElement.appendChild(linkElement);
+
         todoElement.appendChild(tarefaText); // Colocando dentro de uma tag li o item
         listElement.appendChild(todoElement); //Colocando os itens dentro da nossa lista
-
-    })
-
+    });
 };
 
 listarTarefas(); // Chamando a função listar tarefas para carregar na tela
-
-
-
-
-
 
 function adicionarTarefa(): boolean | void {
     if (inputElement.value === " ") {
@@ -56,6 +60,12 @@ function salvarDados() {
     localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefas)); //Converter o array tarefas em string
 };
 
+function deletarTarefa(posicao: number) {
+    //alert(`${posicao}`)
+    tarefas.splice(posicao, 1);
 
+    listarTarefas();
+    salvarDados();
+}
 
 
